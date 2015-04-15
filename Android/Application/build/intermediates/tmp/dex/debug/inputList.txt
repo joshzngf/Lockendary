@@ -1,0 +1,6 @@
+/Users/joshua/Documents/Projects/Lockendary/Android/Application/build/intermediates/classes/debug
+/Users/joshua/Documents/Projects/Lockendary/Android/Application/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-832c70e4d4663199cb885511896a35aa48963edf.jar
+/Users/joshua/Documents/Projects/Lockendary/Android/Application/build/intermediates/pre-dexed/debug/classes-619285e394822def67de8d90a5119dd17201c60f.jar
+/Users/joshua/Documents/Projects/Lockendary/Android/Application/build/intermediates/pre-dexed/debug/classes-6a528f1088f69a2c15bf6fd54d384bb27c7d9cb2.jar
+/Users/joshua/Documents/Projects/Lockendary/Android/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-70454e084e4d07703d94d6956995a246d15d07a6.jar
+/Users/joshua/Documents/Projects/Lockendary/Android/Application/build/intermediates/pre-dexed/debug/classes-514a7bac8687c91b555a2fb4c81e0d28f7c57afd.jar

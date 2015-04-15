@@ -29,7 +29,7 @@
     <string name="alarm_bike">Alarm!</string>
     <!-- From: file:/Users/joshua/Documents/Projects/Lockendary/Android/Application/src/main/res/values/base-strings.xml -->
     <eat-comment/>
-    <string name="app_name">BluetoothChat</string>
+    <string name="app_name">Lockendary</string>
     <!-- From: file:/Users/joshua/Documents/Projects/Lockendary/Android/Application/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>

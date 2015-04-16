@@ -26,6 +26,9 @@ void setup() {
    pinMode(buzzer, OUTPUT);  //設定 pin13 為輸出，LED就接在這
 }
 
+char cmmd[20] = {'\0'};
+int cmmdi = 0;
+
 void loop() {
   
   if(alarm == 1){
@@ -37,38 +40,35 @@ void loop() {
     noTone(buzzer);
   } 
   
-  byte cmmd[20];
+
   int insize;	
   
   if ((insize=(I2CBT.available()))>0){  //讀取藍牙訊息
     //Serial.print("input size = ");
     //Serial.println(insize);
+    //Serial.print("\n");
+
     for (int i=0; i<insize; i++){
-      Serial.print(cmmd[i]=char(I2CBT.read()));
-      Serial.print(",");
+      Serial.println(cmmd[cmmdi]=char(I2CBT.read()));
+
+      if(cmmd[cmmdi] == '\0'){
+        Serial.println(">>function=");
+        Serial.println(cmmd);
+        if(strcmp(cmmd, "ALARM") == 0){
+          alarm = 1;
+        }else if(strcmp(cmmd, "STOP") == 0){
+          Serial.println("stop!!!!!!!");
+          alarm = 0;
+          noTone(buzzer);
+        }
+        
+        cmmdi = 0;
+      }else{
+        cmmdi++;
+      }
     }//此段請參考上一篇解釋
-    
-    char * tok;
-    
-    
-    switch (cmmd[0]) { //讀取第一個字
-      case'A'://97為"a"的ASCII CODE
-         //digitalWrite(buzzer,HIGH);  //點亮LED
-         //tone(buzzer,1000);
-         //playHIMYM();
-         alarm = 1;
-         break;
 
-      case'S':
-         Serial.println("stop!!!!!!!");
-         noTone(buzzer);
-         //digitalWrite(buzzer,LOW);   //熄滅LED
-         alarm = 0;
-         break;
-    } //Switch
-      
   }  
-
 }//loop
 
 

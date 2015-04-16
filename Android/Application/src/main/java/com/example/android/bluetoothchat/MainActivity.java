@@ -61,6 +61,7 @@ public class MainActivity extends SampleActivityBase {
         return true;
     }
 
+
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         MenuItem logToggle = menu.findItem(R.id.menu_toggle_log);

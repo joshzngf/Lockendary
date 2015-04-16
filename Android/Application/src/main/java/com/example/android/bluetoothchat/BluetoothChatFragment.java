@@ -190,9 +190,11 @@ public class BluetoothChatFragment extends Fragment {
                 if(curText.equals(getString(R.string.alarm_bike))){
                     sendMessage("ALARM");
                     mAlarmButton.setText(getString(R.string.stop_alarm));
+                    mAlarmButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_alarm_off_grey600_48dp, 0, 0);
                 }else{
                     sendMessage("STOP");
                     mAlarmButton.setText(getString(R.string.alarm_bike));
+                    mAlarmButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_alarm_grey600_48dp, 0, 0);
                 }
 
             }

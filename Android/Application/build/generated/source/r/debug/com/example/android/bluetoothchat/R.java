@@ -269,8 +269,10 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int ic_action_device_access_bluetooth_searching=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int tile=0x7f020002;
+        public static final int ic_alarm_grey600_48dp=0x7f020001;
+        public static final int ic_alarm_off_grey600_48dp=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int tile=0x7f020004;
     }
     public static final class id {
         public static final int alignBounds=0x7f090002;

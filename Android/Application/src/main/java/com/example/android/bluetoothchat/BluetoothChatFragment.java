@@ -188,13 +188,16 @@ public class BluetoothChatFragment extends Fragment {
             public void onClick(View view) {
                 String curText = mAlarmButton.getText().toString();
                 if(curText.equals(getString(R.string.alarm_bike))){
-                    sendMessage("ALARM");
-                    mAlarmButton.setText(getString(R.string.stop_alarm));
-                    mAlarmButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_alarm_off_grey600_48dp, 0, 0);
+                    if(sendMessage("ALARM")){
+                        mAlarmButton.setText(getString(R.string.stop_alarm));
+                        mAlarmButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_alarm_off_grey600_48dp, 0, 0);
+                    }
+
                 }else{
-                    sendMessage("STOP");
-                    mAlarmButton.setText(getString(R.string.alarm_bike));
-                    mAlarmButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_alarm_grey600_48dp, 0, 0);
+                    if(sendMessage("STOP")) {
+                        mAlarmButton.setText(getString(R.string.alarm_bike));
+                        mAlarmButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_alarm_grey600_48dp, 0, 0);
+                    }
                 }
 
             }
@@ -224,11 +227,11 @@ public class BluetoothChatFragment extends Fragment {
      *
      * @param message A string of text to send.
      */
-    private void sendMessage(String message) {
+    private boolean sendMessage(String message) {
         // Check that we're actually connected before trying anything
         if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
             Toast.makeText(getActivity(), R.string.not_connected, Toast.LENGTH_SHORT).show();
-            return;
+            return false;
         }
 
         // Check that there's actually something to send
@@ -240,7 +243,9 @@ public class BluetoothChatFragment extends Fragment {
             // Reset out string buffer to zero and clear the edit text field
             mOutStringBuffer.setLength(0);
             mOutEditText.setText(mOutStringBuffer);
+            return true;
         }
+        return false;
     }
 
     /**

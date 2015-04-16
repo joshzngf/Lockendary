@@ -15,9 +15,8 @@ gen/
 # Gradle files
 .gradle/
 Android/build/
-/*/build/
 Android/*/build/*
-Android/Application/build/
+
 
 
 

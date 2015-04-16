@@ -1,5 +1,6 @@
 #include <SoftwareSerial.h>
 #include <Wire.h> //引用二個函式庫SoftwareSerial及Wire
+#include <string.h>
 #include "pitch.h"
 
 int buzzer = 8;
@@ -46,6 +47,9 @@ void loop() {
       Serial.print(cmmd[i]=char(I2CBT.read()));
       Serial.print(",");
     }//此段請參考上一篇解釋
+    
+    char * tok;
+    
     
     switch (cmmd[0]) { //讀取第一個字
       case'A'://97為"a"的ASCII CODE

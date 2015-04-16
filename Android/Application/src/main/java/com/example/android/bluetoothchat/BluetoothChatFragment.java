@@ -237,7 +237,7 @@ public class BluetoothChatFragment extends Fragment {
         // Check that there's actually something to send
         if (message.length() > 0) {
             // Get the message bytes and tell the BluetoothChatService to write
-            message = message + "\0";
+            message = message + ",";
             byte[] send = message.getBytes();
             mChatService.write(send);
 
